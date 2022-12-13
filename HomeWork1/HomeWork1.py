@@ -1,3 +1,6 @@
+import math
+
+
 #  ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z
 # not (x or y or z ) == not x and not y and not z 
 
@@ -52,15 +55,39 @@
 # 4. Напишите программу, которая по заданному номеру четверти, показывает диапазон возможных координат точек в этой четверти (x и y).
 
 
-number = int(input('Enter the plane number: '))
+# number = int(input('Enter the plane number: '))
 
-if(number < 1 or number > 4):
-    print('Invalid number !!!')
-elif(number == 1):
-    print('Range of possible coordinates x > 0 and y > 0')
-elif(number == 2):
-    print('Range of possible coordinates x < 0 and y > 0')
-elif(number == 3):
-    print('Range of possible coordinates x < 0 and y < 0')
-elif(number == 4):
-    print('Range of possible coordinates x > 0 and y < 0')            
+# if(number < 1 or number > 4):
+#     print('Invalid number !!!')
+# elif(number == 1):
+#     print('Range of possible coordinates x > 0 and y > 0')
+# elif(number == 2):
+#     print('Range of possible coordinates x < 0 and y > 0')
+# elif(number == 3):
+#     print('Range of possible coordinates x < 0 and y < 0')
+# elif(number == 4):
+#     print('Range of possible coordinates x > 0 and y < 0')            
+
+
+
+
+########################################################################################################################################
+
+
+# 5. Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 2D пространстве.
+
+# Пример:
+
+# - A (3,6); B (2,1) -> 5,09
+# - A (7,-5); B (1,-1) -> 7,21
+
+print('Enter the coordinates of point A')
+x1 = float(input('x1 coordinates: '))
+y1 = float(input('y1 coordinates: '))
+print('Enter the coordinates of point B')
+x2 = float(input('x2 coordinates: '))
+y2 = float(input('y2 coordinates: '))
+
+distance = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+
+print(round(distance, 3))
