@@ -81,13 +81,19 @@ import math
 # - A (3,6); B (2,1) -> 5,09
 # - A (7,-5); B (1,-1) -> 7,21
 
-print('Enter the coordinates of point A')
-x1 = float(input('x1 coordinates: '))
-y1 = float(input('y1 coordinates: '))
-print('Enter the coordinates of point B')
-x2 = float(input('x2 coordinates: '))
-y2 = float(input('y2 coordinates: '))
+# print('Enter the coordinates of point A')
+# x1 = float(input('x1 coordinates: '))
+# y1 = float(input('y1 coordinates: '))
+# print('Enter the coordinates of point B')
+# x2 = float(input('x2 coordinates: '))
+# y2 = float(input('y2 coordinates: '))
 
-distance = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+# distance = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
-print(round(distance, 3))
+# print(round(distance, 3))
+
+
+###########################################################################################################################################
+
+
+# 2. Напишите программу для. проверки истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
