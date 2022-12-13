@@ -31,4 +31,18 @@
 # - x=2; y=4-> 1
 # - x=-34; y=-30 -> 3
 
+x = float(input('Enter the coordinates of the X point: '))
+y = float(input('Enter the coordinates of the Y point: '))
+
+if(x == 0 or y == 0):
+    print('The coordinates must not be zero !!!')
+elif(x > 0 and y > 0):
+    print('1 plane')
+elif(x < 0 and y > 0):
+    print('2 plane')
+elif(x < 0 and y < 0):
+    print('3 plane')
+elif(x > 0 and y < 0):
+    print('4 plane')                
+
 
