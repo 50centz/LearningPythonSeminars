@@ -78,7 +78,6 @@ sum = 0
 for i in my_list:
     sum += i
 
-
 print(*my_list)
 print(sum)
 
