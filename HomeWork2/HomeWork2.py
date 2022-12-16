@@ -67,22 +67,58 @@ import random
 # Для n=4 -> [2, 2.25, 2.37, 2.44]
 # Сумма 9.06
 
-number = int(input('Input a number: '))
+# number = int(input('Input a number: '))
 
-my_list = []
+# my_list = []
 
-for i in range(1, number + 1):
-    my_list.append(round(((1 + 1 / i) ** i), 2))
+# for i in range(1, number + 1):
+#     my_list.append(round(((1 + 1 / i) ** i), 2))
 
-sum = 0
-for i in my_list:
-    sum += i
+# sum = 0
+# for i in my_list:
+#     sum += i
 
-print(*my_list)
-print(sum)
+# print(*my_list)
+# print(sum)
 
 
 
+
+###############################################################################################################################
+
+
+# 3. Реализуйте алгоритм перемешивания списка. НЕ ИСПОЛЬЗОВАТЬ ВСТРОЕННЫЕ БИБЛИОТЕКИ SHUFFLE, максимум использование библиотеки Random для и получения случайного int
 
 
 # print(random.randint(0, 100))
+
+my_list = []
+
+for i in range(1, random.randint(3, 100)):
+    my_list.append(random.randint(0, 100))
+
+print(my_list)
+
+# 1 способ
+
+my_list2 = my_list.copy()
+
+my_list2 = list(map(str, my_list))
+
+my_list2.reverse()
+
+print(*my_list2)
+
+# 2 способ
+
+my_list3 = my_list.copy()
+
+for i in range(len(my_list3) - 1):
+    if my_list3[i] > my_list3[i + 1]:
+        temp = my_list3[i]
+        my_list3[i] = my_list3[i + 1]
+        my_list3[i + 1] = temp
+
+print(my_list3)
+# print(my_list3.index(i))
+
