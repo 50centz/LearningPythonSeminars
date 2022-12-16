@@ -122,3 +122,13 @@ for i in range(len(my_list3) - 1):
 print(my_list3)
 # print(my_list3.index(i))
 
+# 3 способ 
+
+my_list4 = my_list.copy()
+
+for i in my_list4:
+    element = my_list4.pop(random.randint(1, len(my_list4)- 2))
+    my_list4.insert(random.randint(1, len(my_list4) - 1), element)
+
+print(my_list)
+print(my_list4)    
