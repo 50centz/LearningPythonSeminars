@@ -10,16 +10,12 @@ import random
 
 # a = int(input('Enter the size of the list: '))
 
-# Заполняем список рандомными числами, размер списка вводит пользователь
-
 # my_list = []
 
-# for i in range(0, a + 1):
+# for i in range(0, a):
 #     my_list.append(random.randint(0, 100))
 
 # print(*my_list)
-
-# Суммируем элементы на нечётных позициях     
 
 # sum = 0
 
@@ -42,40 +38,78 @@ import random
 # - [2, 3, 4, 5, 6] => [12, 15, 16];
 # - [2, 3, 5, 6] => [12, 15]
 
+# a = int(input('Enter the size of the list: '))
+
+# my_list = []
+
+# for i in range(0, a):
+#     my_list.append(random.randint(0, 10))
+
+# print(my_list)
+
+# my_list2 = []
+
+# size = 0
+
+# if len(my_list) % 2 == 0:
+#     size = int(len(my_list) / 2)
+# else:
+#     size = int(len(my_list) / 2 + 1)
+
+# print(size)
+
+# b = -1
+
+# for i in range(0, size):
+#     my_list2.append(my_list[i] * my_list[b])
+#     b = -1 + b
+    
+# print(my_list2)   
+
+####################################################################################################################################
 
 
-a = int(input('Enter the size of the list: '))
+# 3. Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу между максимальным и минимальным значением дробной части элементов, отличной от 0.
+# Пример:
+# [1.1, 1.2, 3.1, 5, 10.01] => 0.19
 
-# Заполняем список рандомными числами, размер списка вводит пользователь
+
+
+# index = random.randint(0, 3)    Переменная для округления вещественного числа 
+# my_list.append(random.uniform(0,10), index))  Получаем вещественные числа, рандомно
+
+size = int(input('Enter the size of the list: '))
 
 my_list = []
 
-for i in range(0, a):
-    my_list.append(random.randint(0, 10))
+for i in range(0, size):
+    my_list.append(round(random.uniform(0, 10), 2))
 
 print(my_list)
 
 my_list2 = []
 
-size = 0
-if len(my_list) % 2 == 0:
-    size = int(len(my_list) / 2)
+for i in my_list:
+    my_list2.append(round(i % 1, 2))
+
+print(my_list2)
+
+max = 0.01
+min = 100000
+
+for i in my_list2:
+    if max < i:
+        max = i
+    elif min > i:
+        min = i
+        
+
+print(max)
+print(min)        
+
+if min == 0:
+    print('The fractional part is zero, the calculation is not performed')
 else:
-    size = int(len(my_list) / 2 + 1)
-
-print(size)        
-b = -1
-
-for i in range(0, size):
-    my_list2.append(my_list[i] * my_list[b])
-    b = -1 + b
-    
-
-print(my_list2)   
+    print(max - min)    
 
 
-
-
-
-# index = random.randint(0, 3)
-# my_list.append(random.uniform(0,10), index))
