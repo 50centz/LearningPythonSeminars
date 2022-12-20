@@ -14,7 +14,7 @@ import random
 
 # my_list = []
 
-# for i in range(1, a + 1):
+# for i in range(0, a + 1):
 #     my_list.append(random.randint(0, 100))
 
 # print(*my_list)
@@ -74,3 +74,8 @@ for i in range(0, size):
 print(my_list2)   
 
 
+
+
+
+# index = random.randint(0, 3)
+# my_list.append(random.uniform(0,10), index))
