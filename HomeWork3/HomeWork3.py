@@ -121,16 +121,30 @@ import random
 # 3 -> 11
 # 2 -> 10
 
-number = int(input('Input a number: '))
+# number = int(input('Input a number: '))
 
-my_list = []
+# my_list = []
 
-while number > 0:
-    my_list.append(number % 2)
-    number = int(number / 2)
-    print(number)
+# while number > 0:
+#     my_list.append(number % 2)
+#     number = int(number / 2)
+#     print(number)
 
-print(*my_list)
-my_list2 = my_list.copy()
-my_list2.reverse()
-print(*my_list2)    
+# print(*my_list)
+# my_list2 = my_list.copy()
+# my_list2.reverse()
+# print(*my_list2)
+
+
+##########################################################################################################################################################
+
+
+# 5. Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
+# Пример:
+# для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] Негафибоначчи
+
+    
+
+
+
+
