@@ -143,8 +143,37 @@ import random
 # Пример:
 # для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] Негафибоначчи
 
-    
 
 
+def Fibonacci(number):
+    fibo1 = 0
+    fibo2 = 1
+    my_list1 = []
+    my_list1.append(fibo1)
+    sum = 0
+    for i in range(0, number):
+        sum = (-fibo1 + fibo2)
+        my_list1.append(sum)
+        fibo2 = fibo1
+        fibo1 = sum
+    my_list1.reverse()
+
+    fibo3 = 1
+    fibo4 = 1
+    my_list2 = []
+    my_list2.append(fibo3)
+    my_list2.append(fibo4)
+    for i in range(2, number):
+        my_list2.append(my_list2[i - 1] + my_list2[i - 2])
+
+    my_list3 = my_list1 + my_list2      
 
 
+    return my_list3    
+
+
+number = int(input('Enter the number of the Fibonacci sequence: '))
+if number < 2:
+    print('The number is incorrect, enter a number greater than or equal to 2 !!!')
+else:
+    print(Fibonacci(number))    
