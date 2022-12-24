@@ -143,7 +143,24 @@ import random
 # Пример:
 # для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] Негафибоначчи
 
-    
+# F(n) = (n-2) + (n - 1)
+ 
+
+fibo1 = 1
+fibo2 = 1
+
+number = int(input('Input a number: '))
+
+my_list = [fibo1, fibo2]
+
+for i in range(2, number):
+    my_list.append(my_list[i - 1] + my_list[i - 2])
+   
+
+
+print(my_list)    
+
+
 
 
 
