@@ -1,5 +1,6 @@
 # лямбд, filter, map, zip, enumerate, list comprehension
 from random import randint as RA
+import random
 
 # Написать строчный калькулятор 
 
