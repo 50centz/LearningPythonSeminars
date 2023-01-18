@@ -1,4 +1,5 @@
 # лямбд, filter, map, zip, enumerate, list comprehension
+from random import randint as RA
 
 # Написать строчный калькулятор 
 
@@ -89,5 +90,20 @@
 
 
 # Сократить первые задания 
+# 3. Реализуйте алгоритм перемешивания списка. НЕ ИСПОЛЬЗОВАТЬ ВСТРОЕННЫЕ БИБЛИОТЕКИ SHUFFLE, максимум использование библиотеки Random для и получения случайного int
+
+# Было 
+
+my_list = []
+for i in range(1, random.randint(3, 100)):
+    my_list.append(random.randint(0, 100))
+print(my_list)
+
+
+# СТАЛО
+
+my_list = [RA(0, 100) for i in range(RA(3, 100))]
+print(my_list)
+
 
 
