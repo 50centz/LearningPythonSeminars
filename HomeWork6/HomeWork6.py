@@ -93,18 +93,52 @@ import random
 # Сократить первые задания 
 # 3. Реализуйте алгоритм перемешивания списка. НЕ ИСПОЛЬЗОВАТЬ ВСТРОЕННЫЕ БИБЛИОТЕКИ SHUFFLE, максимум использование библиотеки Random для и получения случайного int
 
-# Было 
+# БЫЛО 
 
-my_list = []
-for i in range(1, random.randint(3, 100)):
-    my_list.append(random.randint(0, 100))
-print(my_list)
+# my_list = []
+# for i in range(1, random.randint(3, 100)):
+#     my_list.append(random.randint(0, 100))
+# print(my_list)
 
 
 # СТАЛО
 
-my_list = [RA(0, 100) for i in range(RA(3, 100))]
-print(my_list)
+# my_list = [RA(0, 100) for i in range(RA(3, 100))]
+# print(my_list)
 
 
 
+# 2. Задайте список из n чисел последовательности (1 + 1/n)^n, выведеите его на экран, а так же сумму элементов списка.
+# Пример:
+# Для n=4 -> [2, 2.25, 2.37, 2.44]
+# Сумма 9.06
+
+# БЫЛО 
+
+# number = int(input('Input a number: '))
+
+# my_list = []
+
+# for i in range(1, number + 1):
+#     my_list.append(round(((1 + 1 / i) ** i), 2))
+
+# sum = 0
+# for i in my_list:
+#     sum += i
+
+# print(*my_list)
+# print(sum)
+
+# СТАЛО
+
+digit = int(input('Input a digit: '))
+my_list = [i + 1 for i in range(digit)]
+my_list = list(map(lambda x : (1 + 1/ x) ** x, my_list))
+sum = 0
+for i in my_list:
+    sum += i
+print(my_list)    
+print(round(sum, 2))  
+  
+    
+    
