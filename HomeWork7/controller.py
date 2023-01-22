@@ -12,6 +12,7 @@ def input_handler(inp):
         case 3:
             view.save_file(model.db_list)   
         case 4:
+            model.read_db('database.txt')
             model.db_list.append(view.create_contact())
         case 5:
             view.change_contact(model.db_list)
