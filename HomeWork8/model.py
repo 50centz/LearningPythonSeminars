@@ -4,6 +4,7 @@ db_list = []
 
 def read_db(path):
     global db_list
+    db_list = []
     with open(path, 'r', encoding='UTF-8') as file:
         my_list = file.readlines()
     for i in my_list:
@@ -20,15 +21,16 @@ def read_db(path):
         db_list.append(my_object_dict)        
  
         
-def read_db_object(path):
+def read_db_object(path, choice):
     global db_list
+    db_list = []
     with open(path, 'r', encoding='UTF-8') as file:
         my_list = file.readlines()
     for i in my_list:
         my_object_dict = dict()
         my_ocenka = dict()
         my_object = i.strip().split(';')[0]
-        if my_object == 'Математика':
+        if my_object == choice:
             temp = i.strip().split(';')[1]
             temp1 = temp.strip().split(',')
             for j in temp1:
@@ -37,3 +39,15 @@ def read_db_object(path):
                 my_ocenka[name] = [ocenka]
             my_object_dict[my_object] = (my_ocenka)    
             db_list.append(my_object_dict)
+
+
+# a = 'Математика'
+# b= 'История'
+# c= 'Литература'
+# choice = 'привет'
+
+# while True:
+#     if choice == a or choice == b or choice == c:
+#         break
+#     else:
+#         choice = input('Введите корректное название: ')
