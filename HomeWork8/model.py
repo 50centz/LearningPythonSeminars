@@ -40,14 +40,3 @@ def read_db_object(path, choice):
             my_object_dict[my_object] = (my_ocenka)    
             db_list.append(my_object_dict)
 
-
-# a = 'Математика'
-# b= 'История'
-# c= 'Литература'
-# choice = 'привет'
-
-# while True:
-#     if choice == a or choice == b or choice == c:
-#         break
-#     else:
-#         choice = input('Введите корректное название: ')
