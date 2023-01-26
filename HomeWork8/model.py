@@ -1,4 +1,5 @@
 db_list = []
+choiceClass = ''
 
 
 
@@ -39,4 +40,82 @@ def read_db_object(path, choice):
                 my_ocenka[name] = [ocenka]
             my_object_dict[my_object] = (my_ocenka)    
             db_list.append(my_object_dict)
+
+
+
+def choice_class():
+    global choiceClass
+    choiceClass = ' '
+    print('7A')
+    print('7B')
+    cl = input('Выберите класс: ').upper()
+    while True:
+        if cl == '7A' or cl == '7B':
+            break
+        else:
+            cl = input('Введите корректный класс: ').upper()
+    choiceClass = cl + '.txt'
+
+
+def board(c_O):
+    name = input('Кто пойдёт к доске ? ')
+    while True:
+        if name == 'Иванов Максим' or name == 'Петров Сергей' or name == 'Сидоров Иван' or name == 'Кузнецов Артём' or name == 'Григорьев Сергей' or name == 'Васильев Иван':
+            break
+        else:
+            name = input('Введите корректно имя: ')
+    choice = int(input('Какую оценку поставим ? '))
+    for i in range(len(db_list)):
+        for k in db_list[i].keys():
+            if k == c_O:
+                for v in db_list[i].values():
+                    for j,z  in v.items():
+                        if name == j:
+                            z[0].append(choice)
+                                                
+                
+
+def save_file():
+    db_list1 = db_list.copy()
+    a = ''
+    for i in range(len(db_list1)):
+        for k in db_list1[i].keys():
+            a = k    
+    read_db(choiceClass)
+    
+    with open(choiceClass, 'w') as file:
+        file.write('')
+    for w in range(len(db_list)):
+        for m in db_list[w].keys():
+            with open(choiceClass, 'a', encoding='UTF-8') as file:
+                            file.write(f'{m};')
+            if a == m:
+                for q in range(len(db_list1)):
+                    for e in db_list1[q].keys():
+                        with open(choiceClass, 'a', encoding='UTF-8') as file:
+                            file.write(f'{e};')
+                        for r in db_list1[q].values():
+                            for t, y in r.items():
+                                y = ', '.join(map(str, y))
+                                
+                                with open(choiceClass, 'a', encoding='UTF-8') as data:
+                                    data.write(f'{t}:{y},')
+                            with open(choiceClass, 'a', encoding='UTF-8') as fi:          
+                                fi.write(f'\n')
+                                       
+            else:                                                    
+                for v in db_list[w].values():
+                    for j,z  in v.items():
+                        a = ', '.join(map(str, z))
+                        p = ''.join(map(str, a))
+                        with open(choiceClass, 'a', encoding='UTF-8') as data:
+                            data.write(f'{j}:{p},')
+                    with open(choiceClass, 'a', encoding='UTF-8') as f:        
+                        f.write(f'\n')
+                                    
+                                    
+           
+
+
+    
 
