@@ -80,16 +80,15 @@ def save_file():
     a = ''
     for i in range(len(db_list1)):
         for k in db_list1[i].keys():
-            a = k    
+            a = k
+    h = a                
     read_db(choiceClass)
     
     with open(choiceClass, 'w') as file:
         file.write('')
     for w in range(len(db_list)):
         for m in db_list[w].keys():
-            with open(choiceClass, 'a', encoding='UTF-8') as file:
-                            file.write(f'{m};')
-            if a == m:
+            if h == m:
                 for q in range(len(db_list1)):
                     for e in db_list1[q].keys():
                         with open(choiceClass, 'a', encoding='UTF-8') as file:
@@ -103,13 +102,14 @@ def save_file():
                             with open(choiceClass, 'a', encoding='UTF-8') as fi:          
                                 fi.write(f'\n')
                                        
-            else:                                                    
+            else:
+                with open(choiceClass, 'a', encoding='UTF-8') as file:
+                            file.write(f'{m};')                                                    
                 for v in db_list[w].values():
                     for j,z  in v.items():
-                        a = ', '.join(map(str, z))
-                        p = ''.join(map(str, a))
+                        a = ' '.join(map(str, z))
                         with open(choiceClass, 'a', encoding='UTF-8') as data:
-                            data.write(f'{j}:{p},')
+                            data.write(f'{j}:{a},')
                     with open(choiceClass, 'a', encoding='UTF-8') as f:        
                         f.write(f'\n')
                                     
