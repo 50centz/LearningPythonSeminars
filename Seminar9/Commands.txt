@@ -1,0 +1,15 @@
+install venv  Win10:
+python -m venv "NameFolder"
+
+
+.\VirtualEnvironment\Scripts\deactivate.bat
+.\VirtualEnvironment\Scripts\activate.bat
+
+linux  bash
+
+source /venv/Scripts/activate
+source /venv/Scripts/deactivate
+
+
+
+pip install aiogram

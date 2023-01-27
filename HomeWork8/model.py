@@ -13,6 +13,8 @@ def read_db(path):
         my_ocenka = dict()
         my_object = i.strip().split(';')[0]
         temp = i.strip().split(';')[1]
+        a = len(temp)
+        temp = temp[:a-1]
         temp1 = temp.strip().split(',')
         for j in temp1:
             name = j.strip().split(':')[0]
@@ -33,6 +35,8 @@ def read_db_object(path, choice):
         my_object = i.strip().split(';')[0]
         if my_object == choice:
             temp = i.strip().split(';')[1]
+            a = len(temp)
+            temp = temp[:a-1]
             temp1 = temp.strip().split(',')
             for j in temp1:
                 name = j.strip().split(':')[0]
@@ -122,5 +126,8 @@ def save_file():
            
 
 
-    
+a = '7A.txt'
+b = 'Литература'
+
+read_db_object(a, b)
 
