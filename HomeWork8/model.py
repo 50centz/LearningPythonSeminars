@@ -96,7 +96,9 @@ def save_file():
                         for r in db_list1[q].values():
                             for t, y in r.items():
                                 y = ', '.join(map(str, y))
-                                
+                                y = y.replace('[', '')
+                                y = y.replace(']', '')
+                                y = y.replace(',', '')
                                 with open(choiceClass, 'a', encoding='UTF-8') as data:
                                     data.write(f'{t}:{y},')
                             with open(choiceClass, 'a', encoding='UTF-8') as fi:          
@@ -108,6 +110,9 @@ def save_file():
                 for v in db_list[w].values():
                     for j,z  in v.items():
                         a = ' '.join(map(str, z))
+                        a = a.replace('[', '')
+                        a = a.replace(']', '')
+                        a = a.replace(',', '')
                         with open(choiceClass, 'a', encoding='UTF-8') as data:
                             data.write(f'{j}:{a},')
                     with open(choiceClass, 'a', encoding='UTF-8') as f:        
