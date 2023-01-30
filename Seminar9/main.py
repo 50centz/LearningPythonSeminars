@@ -1,6 +1,6 @@
 from aiogram import Bot, Dispatcher, executor, types
 
-bot = Bot('TOKEN')
+bot = Bot('5836660462:AAGe1SzEod0F4KBRm4HQLBUz5KwkYB7SXto')
 dp = Dispatcher(bot)
 
 async def on_start(_):
@@ -9,7 +9,7 @@ async def on_start(_):
 
 @dp.message_handler(commands=['start'])
 async def mes_start(message: types.Message):
-    await message.answer('Привет всем')
+    await message.answer('Привет' )
 
 
 @dp.message_handler(commands=['help'])

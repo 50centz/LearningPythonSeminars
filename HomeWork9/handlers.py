@@ -72,10 +72,10 @@ async def mes_all(message: types.Message):
             return 
         else:
             total -= int(message.text)
+            if total <= 0:
+                await message.answer(f'Выиграл {message.from_user.first_name} !!!!!')
+                return
         await message.answer(f'Осталось {total} конфет\nТеперь ходит ТЕРМИНАТОР - 3')
-        if total <= 0:
-            await message.answer(f'Выиграл {message.from_user.first_name} !!!!!')
-            return
         b = randint(1, candy)
         total -= b
         await message.answer(f'ТЕРМИНАТОР - 3 взял {b} конфет(ы)\nОсталось {total} конфет')
