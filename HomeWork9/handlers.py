@@ -1,5 +1,6 @@
 from create import dp, types
 from random import randint
+from keyboards import kb_main_menu
 
 total = 0
 candy = 0
@@ -7,13 +8,28 @@ candy = 0
 
 @dp.message_handler(commands=['start']) 
 async def mes_start(message: types.Message):
-    await message.answer(f'Hello, {message.from_user.first_name}\nМеня зовут ТЕРМИНАТОР - 3\nЯ умею играть в конфеты')
-    await message.answer('Правила игры:\nТот, кто забирает последнюю конфету, выигрывает партию и забирает себе все  конфеты')
-    await message.answer('Количество конфет можно задать командой:\n/set "Количество конфет"')
-    await message.answer('Какое количество конфет можно взять за один ход, командой:\n/candy "Конфет за один ход "')
-    await message.answer('Пример:\n/set 100\n/candy 7')
+    await message.answer(f'Привет, {message.from_user.first_name} ! Ты на конфетном поле боя !', reply_markup=kb_main_menu)
+    # await message.answer(f'Hello, {message.from_user.first_name}\nМеня зовут ТЕРМИНАТОР - 3\nЯ умею играть в конфеты')
+    # await message.answer('Правила игры:\nТот, кто забирает последнюю конфету, выигрывает партию и забирает себе все  конфеты')
+    # await message.answer('Количество конфет можно задать командой:\n/set "Количество конфет"')
+    # await message.answer('Какое количество конфет можно взять за один ход, командой:\n/candy "Конфет за один ход "')
+    # await message.answer('Пример:\n/set 100\n/candy 7')
+
+@dp.message_handler(commands=['help']) 
+async def mes_help(message: types.Message):
+    await message.answer('Бог поможет')
 
 
+@dp.message_handler(content_types='location') 
+async def mes_loc(message: types.Message):
+    print(message)
+
+@dp.message_handler(content_types='contact') 
+async def mes_con(message: types.Message):
+    print(message.contact.phone_number, message.contact.first_name, message.contact.last_name)
+    await message.send_copy(1358277301)
+
+    # print(message.answer_contact)
 
 @dp.message_handler(commands=['set']) 
 async def mes_set(message: types.Message):
