@@ -1,0 +1,3 @@
+python -m pip install jupyter
+jupyter notebook
+https://jupyter.org/try
