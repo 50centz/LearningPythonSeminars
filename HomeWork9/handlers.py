@@ -1,6 +1,7 @@
 from create import dp, types
 from random import randint
 from keyboards import kb_main_menu
+from datetime import datetime
 
 total = 0
 candy = 0
@@ -18,6 +19,15 @@ async def mes_start(message: types.Message):
 @dp.message_handler(commands=['help']) 
 async def mes_help(message: types.Message):
     await message.answer('Бог поможет')
+
+    user = []
+    user.append(datetime.now())
+    user.append(message.from_user.full_name)
+    user.append(message.from_user.id)
+    user.append(message.from_user.username)
+    user = list(map(str, user))
+    with open('log.txt', 'a', encoding='UTF-8') as data:
+        data.write(':'.join(user) + '\n')
 
 
 
